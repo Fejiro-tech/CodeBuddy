@@ -49,7 +49,7 @@ const Chat = () => {
         </div>
 
         {/* Chat container */}
-        <div className='w-full lg:ml-[20%] mt-16 h-[calc(100vh-4rem)] overflow-y-auto'>
+        <div className='w-full lg:ml-[20%] mt-16 h-[calc(100vh-4rem)] overflow-y-auto '>
           <ChatContainer 
             messages={messages}
             setMessages={setMessages}
@@ -63,7 +63,7 @@ const Chat = () => {
       {isMobileSidebarOpen && (
         <>
           <div className='bg-black/50 fixed inset-0 lg:hidden z-30' onClick={() => setIsMobileSidebarOpen(false)}></div>
-          <div className='w-64 h-screen top-0 left-0 fixed bg-amber-500 lg:hidden z-40 transition-transform duration-300 translate-x-0'>
+          <div className='w-64 h-screen top-0 left-0 fixed lg:hidden z-40 transition-transform duration-300 translate-x-0'>
             <SideBar 
               chats={chats}
               setChats={setChats}

@@ -17,7 +17,7 @@ const TopBar = ({isMobileSidebarOpen, setIsMobileSidebarOpen}) => {
         <p className='text-[18px] md:text-[24px]  font-bold'>CodeBuddy</p>
       </div>
 
-      <button onClick={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)} className='text-2xl font-bold mr-2'>
+      <button onClick={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)} className='text-2xl font-bold  lg:hidden'>
         <Menu size={24} className='text-[#7fdb5d]'/>
       </button>
         
