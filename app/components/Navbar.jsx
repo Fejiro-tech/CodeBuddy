@@ -18,7 +18,7 @@ const Navbar = () => {
                 <p className='text-[20px] md:text-[22px] lg:text-[24px] font-extrabold'>CodeBuddy</p>
             </div>
 
-            <div className=' space-x-8 lg:space-x-10 text-[18px] lg:text-[20px] font-semibold uppercase md:flex'>
+            <div className=' space-x-8 lg:space-x-10 text-[18px] lg:text-[20px] font-medium uppercase md:flex'>
                 <Link href="/" className="hover:text-[#FF5722] hidden md:block">Home</Link>
                 <Link href="#features" className="hover:text-[#FF5722] hidden md:block">Features</Link>
 

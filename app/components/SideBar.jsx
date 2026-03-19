@@ -27,11 +27,11 @@ const SideBar = ({
   };
 
   return (
-    <div className='bg-[#1e1e1e] border-r border-white/15 text-white h-screen flex flex-col py-8 px-6'>
+    <div className='bg-[#1e1e1e] border-r border-white/15 text-white h-screen flex flex-col py-10 px-6'>
       
       <button
         onClick={startNewChat}
-        className="w-fit mb-12 flex items-center gap-3"
+        className="w-fit mb-10 flex items-center gap-3"
       >
         <MessageSquarePlus size={22} />
         <span className='font-bold'>New chat</span>
