@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className='flex justify-between items-center bg-transparent max-w-6xl mx-auto py-8  '>
             <div className='flex items-center'>
 
-                <span className=" text-[20px] md:text-[22px] lg:text-[24px]  font-bold pr-2 text-[#55d627]">
+                <span className=" text-[20px] md:text-[22px] lg:text-[24px]  font-extrabold pr-2 text-[#55d627]">
                     &lt;/&gt;
                 </span>
                 <p className='text-[20px] md:text-[22px] lg:text-[24px] font-extrabold'>CodeBuddy</p>
