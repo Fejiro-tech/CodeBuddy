@@ -82,10 +82,10 @@ const ChatContainer = ({
 
   return (
     <div className='bg-white/10 flex flex-col items-center justify-center pt-20 px-6 md:px-10 min-h-screen '> 
-      <div className='max-w-240 w-full flex-1 mt-10'> 
+      <div className='max-w-240 w-full flex-1 '> 
 
         {messages?.length === 0 ? (
-          <div className='px-4'>
+          <div className='px-2'>
             <WelcomeScreen /> 
             <SuggestedCard onSelect={handleSendMessage}/> 
           </div>
@@ -101,7 +101,7 @@ const ChatContainer = ({
 
             {isLoading && (
               <div className='flex justify-start mb-2'>
-                <div className='bg-white/20 text-gray-200 rounded-full px-6 py-4 w-fit max-w-xs mt-2'>
+                <div className='bg-white/20 text-gray-200 rounded-full px-4 py-3 w-fit max-w-xs mt-2'>
                   <div className='flex gap-1 items-center'>
                     <span className='w-2 h-2 bg-gray-400 rounded-full animate-bounce'></span>
                     <span className='w-2 h-2 bg-gray-400 rounded-full animate-bounce [animation-delay:0.2s] '></span>

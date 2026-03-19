@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react'
 import { MessageSquarePlus } from "lucide-react"
 
-const SideBar = ({ messages, setMessages, chats, setChats, activeChatIndex, setActiveChatIndex, setCurrentChatId, stopAITyping }) => {
+const SideBar = ({ messages, setMessages, chats, setChats, activeChatIndex, setActiveChatIndex, setCurrentChatId, stopAITyping, setIsMobileSidebarOpen}) => {
 
   const startNewChat = () => {
   if (messages.length === 0) return;
@@ -28,7 +28,12 @@ const SideBar = ({ messages, setMessages, chats, setChats, activeChatIndex, setA
     <div className='bg-[#1e1e1e] backdrop-blur-md border-r border-white/15 text-white h-screen flex flex-col py-4 px-10'>
       <div className="mb-6 flex items-center justify-center"></div>
 
-      <button onClick={startNewChat} className="w-fit mb-8  flex items-center gap-2">
+      <button onClick={() => {
+          startNewChat();  
+          setIsMobileSidebarOpen(false)
+        }} 
+        className="w-fit mb-8  flex items-center gap-2"
+      >
        <MessageSquarePlus size={24} />
        <span>New chat</span>
       </button>

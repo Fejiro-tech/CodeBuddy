@@ -34,9 +34,9 @@ const Navbar = () => {
                 <div className='bg-black/50 fixed inset-0 lg:hidden z-30' onClick={() => setIsOpen(false)}></div>
                 <div className='w-68 h-screen bg-[#1e1e1e] top-0 left-0 fixed md:hidden z-40 transition-transform duration-300 translate-x-0 px-10 py-20 flex flex-col gap-12 text-[16px] sm:text-[18px] md:text-[20px] font-bold uppercase text-[#55d627]'>
                 
-                    <Link href="/" className="hover:text-[#FF5722]">Home</Link>
-                    <Link href="#features" className="hover:text-[#FF5722]">Features</Link>
-                    <Link href="/chatPage" className="hover:text-[#FF5722]">Start Chatting</Link>
+                    <Link href="/" onClick={() => setIsOpen(false)} className="hover:text-[#FF5722]">Home</Link>
+                    <Link href="#features" onClick={() => setIsOpen(false)} className="hover:text-[#FF5722]">Features</Link>
+                    <Link href="/chatPage" onClick={() => setIsOpen(false)} className="hover:text-[#FF5722]">Start Chatting</Link>
                     
                     
                 </div>

@@ -72,6 +72,7 @@ const Chat = () => {
               setActiveChatIndex={setActiveChatIndex}
               setCurrentChatId={setCurrentChatId}
               stopAITyping={stopTypingFunc}
+              setIsMobileSidebarOpen={setIsMobileSidebarOpen}
             />
           </div>
         </>
