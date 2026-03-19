@@ -28,7 +28,7 @@ const ChatInput = ({ onSend }) => {
         onKeyDown={handleKeyDown}
         placeholder='Ask your question...'
         rows={1}
-        className='flex-1 resize-none  text-white p-4 md:p-5 rounded-full outline-0'
+        className='flex-1 resize-none  text-white p-3 md:p-5 rounded-full outline-0'
       />
 
       <button

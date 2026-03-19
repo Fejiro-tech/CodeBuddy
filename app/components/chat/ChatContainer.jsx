@@ -81,11 +81,11 @@ const ChatContainer = ({
   }
 
   return (
-    <div className='bg-white/10 flex flex-col items-center justify-center pt-20 px-12 min-h-screen '> 
-      <div className='max-w-240 w-full flex-1'> 
+    <div className='bg-white/10 flex flex-col items-center justify-center pt-20 px-6 md:px-10 min-h-screen '> 
+      <div className='max-w-240 w-full flex-1 mt-10'> 
 
         {messages?.length === 0 ? (
-          <div className='px-10'>
+          <div className='px-4'>
             <WelcomeScreen /> 
             <SuggestedCard onSelect={handleSendMessage}/> 
           </div>
@@ -117,7 +117,7 @@ const ChatContainer = ({
 
       </div>
 
-      <div className='flex justify-center max-w-240 w-full pb-20 md:px-12'> 
+      <div className='flex justify-center max-w-240 w-full py-10 md:px-12'> 
         <ChatInput onSend={handleSendMessage}/> 
       </div> 
     </div>

@@ -24,7 +24,7 @@ const Chat = () => {
   }, [chats])
 
   return (
-    <>
+    <div className=''>
       {/* Top bar */}
       <div className='fixed top-0 left-0 w-full h-16 flex items-center z-30'>
         <TopBar 
@@ -49,7 +49,7 @@ const Chat = () => {
         </div>
 
         {/* Chat container */}
-        <div className='w-full lg:ml-[20%] mt-16 h-[calc(100vh-4rem)] overflow-y-auto '>
+        <div className='w-full  lg:ml-[20%]  h-[calc()100vh] overflow-y-auto  '>
           <ChatContainer 
             messages={messages}
             setMessages={setMessages}
@@ -76,7 +76,7 @@ const Chat = () => {
           </div>
         </>
       )}
-    </>
+    </div>
   )
 }
 

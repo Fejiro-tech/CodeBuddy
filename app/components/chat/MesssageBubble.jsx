@@ -28,9 +28,9 @@ const MesssageBubble = ({ role, content }) => {
   return (
     <div className={`flex border-b-2 border-b-white/10 py-6 ${isUser ? "justify-end" : "justify-start"} mb-2`}>
       <div
-        className={`max-w-[90%] break-words whitespace-pre-wrap p-4 rounded-2xl  ${
+        className={`max-w-[90%] wrap-break-word whitespace-pre-wrap p-4 rounded-2xl text-sm sm:text-base  ${
           isUser
-            ? "bg-linear-to-r from-[#549431] to-[#3a8d14] text-white"
+            ? "bg-linear-to-r from-[#549431] to-[#3a8d14] text-white mb-2"
             : "text-gray-200"
         }`}
       >
