@@ -85,7 +85,7 @@ const Chat = () => {
           />
         </div>
 
-        <div className='w-full lg:ml-[20%] h-screen overflow-y-auto'>
+        <div className='w-full lg:ml-[20%] h-screen overflow-y-auto bg-white/10'>
           <ChatContainer 
             messages={messages}
             setMessages={setMessages}
