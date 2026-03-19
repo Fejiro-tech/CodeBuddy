@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { Menu } from "lucide-react"
+import { Menu, MessageSquarePlus } from "lucide-react"
 
 const Navbar = () => {
 
@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <div className='bg-transparent z-30 relative w-full'>
-        <div className='flex justify-between items-center bg-transparent max-w-6xl mx-auto py-8  '>
+        <div className='flex justify-between items-center bg-transparent max-w-6xl mx-auto py-8 bg '>
             <div className='flex items-center'>
 
                 <span className=" text-[20px] md:text-[22px] lg:text-[24px]  font-extrabold pr-2 text-[#55d627]">
@@ -18,15 +18,14 @@ const Navbar = () => {
                 <p className='text-[20px] md:text-[22px] lg:text-[24px] font-extrabold'>CodeBuddy</p>
             </div>
 
-            <div className='space-x-6 lg:space-x-10 text-[18px] lg:text-[20px] font-bold uppercase hidden md:block'>
-                <Link href="/" className="hover:text-[#FF5722]">Home</Link>
-                <Link href="#features" className="hover:text-[#FF5722]">Features</Link>
-                <Link href="/chatPage" className="hover:text-[#FF5722]">Start Chatting</Link>
-            </div>
+            <div className=' space-x-8 lg:space-x-10 text-[18px] lg:text-[20px] font-semibold uppercase md:flex'>
+                <Link href="/" className="hover:text-[#FF5722] hidden md:block">Home</Link>
+                <Link href="#features" className="hover:text-[#FF5722] hidden md:block">Features</Link>
 
-            <button onClick={() => setIsOpen(!isOpen)} className='text-2xl font-bold  block md:hidden'>
-                <Menu size={24} className='text-[#7fdb5d]'/>
-            </button>
+                <Link href="/chatPage" className="w-fit flex items-center gap-2">
+                    <MessageSquarePlus size={30} className=''/>
+                </Link>
+            </div>
         </div>
 
         {isOpen && (

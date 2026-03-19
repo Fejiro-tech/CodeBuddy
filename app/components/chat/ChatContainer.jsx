@@ -17,7 +17,6 @@ const ChatContainer = ({
   const typingIntervalRef = useRef(null)
   const [isLoading, setIsLoding] = useState(false)
 
-  // Provide stop typing function to parent
   useEffect(() => {
     setStopTypingFunc(() => () => {
       if (typingIntervalRef.current) {

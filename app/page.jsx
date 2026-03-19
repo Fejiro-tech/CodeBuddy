@@ -23,7 +23,6 @@ export default function LandingPage() {
     },
   };
 
-  // Features with icons
   const features = [
     {
       title: "Instant Answers",
@@ -41,6 +40,7 @@ export default function LandingPage() {
       icon: <FaComments />,
     },
   ];
+  
 
   return (
     <main className="min-h-screen text-white bg-[#0A0A0A]">

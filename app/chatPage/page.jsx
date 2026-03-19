@@ -12,20 +12,55 @@ const Chat = () => {
   const [currentChatId, setCurrentChatId] = useState(Date.now())
   const [stopTypingFunc, setStopTypingFunc] = useState(() => () => {})
 
-  // Load saved chats
+  // AUTO SAVE
   useEffect(() => {
-    const savedChats = localStorage.getItem("chats")
-    if (savedChats) setChats(JSON.parse(savedChats))
-  }, []) 
+    if (messages.length === 0) return;
 
-  // Save chats
+    setChats(prev => {
+      if (activeChatIndex !== null) {
+        const updated = [...prev];
+        updated[activeChatIndex] = {
+          ...updated[activeChatIndex],
+          messages: [...messages],
+        };
+        return updated;
+      }
+
+      const title = messages[0]?.content?.slice(0, 30) || "New Chat";
+
+      // prevent duplicates
+      if (prev.length > 0 && prev[0].title === title) {
+        const updated = [...prev];
+        updated[0] = {
+          ...updated[0],
+          messages: [...messages],
+        };
+        return updated;
+      }
+
+      return [
+        {
+          title,
+          messages: [...messages],
+        },
+        ...prev,
+      ];
+    });
+  }, [messages, activeChatIndex]);
+
   useEffect(() => {
-    localStorage.setItem("chats", JSON.stringify(chats))
-  }, [chats])
+    const saved = localStorage.getItem("chats");
+    if (saved) {
+      setChats(JSON.parse(saved));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("chats", JSON.stringify(chats));
+  }, [chats]);
 
   return (
-    <div className=''>
-      {/* Top bar */}
+    <div>
       <div className='fixed top-0 left-0 w-full h-16 flex items-center z-30'>
         <TopBar 
           isMobileSidebarOpen={isMobileSidebarOpen}
@@ -34,27 +69,28 @@ const Chat = () => {
       </div>
 
       <div className='flex w-full relative'>
+        
         {/* Desktop sidebar */}
         <div className='w-[20%] fixed top-16 left-0 h-[calc(100vh-4rem)] hidden lg:block'>
           <SideBar 
             chats={chats}
             setChats={setChats}
-            messages={messages} 
+            messages={messages}
             setMessages={setMessages}
             activeChatIndex={activeChatIndex}
             setActiveChatIndex={setActiveChatIndex}
             setCurrentChatId={setCurrentChatId}
-            stopAITyping={stopTypingFunc} // Stop AI typing from sidebar
+            stopAITyping={stopTypingFunc}
+            setIsMobileSidebarOpen={setIsMobileSidebarOpen}
           />
         </div>
 
-        {/* Chat container */}
-        <div className='w-full  lg:ml-[20%]  h-[calc()100vh] overflow-y-auto  '>
+        <div className='w-full lg:ml-[20%] h-screen overflow-y-auto'>
           <ChatContainer 
             messages={messages}
             setMessages={setMessages}
             currentChatId={currentChatId}
-            setStopTypingFunc={setStopTypingFunc} // provide stop function
+            setStopTypingFunc={setStopTypingFunc}
           />
         </div>
       </div>
@@ -62,13 +98,18 @@ const Chat = () => {
       {/* Mobile sidebar */}
       {isMobileSidebarOpen && (
         <>
-          <div className='bg-black/50 fixed inset-0 lg:hidden z-30' onClick={() => setIsMobileSidebarOpen(false)}></div>
-          <div className='w-64 h-screen top-0 left-0 fixed lg:hidden z-40 transition-transform duration-300 translate-x-0'>
+          <div 
+            className='bg-black/50 fixed inset-0 lg:hidden z-30'
+            onClick={() => setIsMobileSidebarOpen(false)}
+          />
+
+          <div className='w-64 h-screen top-0 left-0 fixed lg:hidden z-40'>
             <SideBar 
               chats={chats}
               setChats={setChats}
               messages={messages}
               setMessages={setMessages}
+              activeChatIndex={activeChatIndex} 
               setActiveChatIndex={setActiveChatIndex}
               setCurrentChatId={setCurrentChatId}
               stopAITyping={stopTypingFunc}
