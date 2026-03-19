@@ -47,7 +47,7 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <section className="relative h-screen bg-[url('/hero3.webp')] bg-cover bg-center bg-no-repeat px-8 md:px-10">
-        <div className="absolute inset-0 bg-linear-to-r from-[#0A0A0A] to-[#0A0A0A]/75"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-[#0A0A0A] to-[#0A0A0A]/80"></div>
         <Navbar />
 
         <div className="flex items-center h-[80vh]">

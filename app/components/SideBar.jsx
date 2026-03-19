@@ -21,7 +21,7 @@ const SideBar = ({ messages, setMessages, chats, setChats, activeChatIndex, setA
   if (stopAITyping) stopAITyping();
   setMessages([]);
   setCurrentChatId(Date.now());
-  setActiveChatIndex(null); // reset active chat
+  setActiveChatIndex(null); 
 };
 
   return (
@@ -46,8 +46,8 @@ const SideBar = ({ messages, setMessages, chats, setChats, activeChatIndex, setA
             <div 
               key={index}
               onClick={() => {
-              setActiveChatIndex(index)      // mark this chat as active
-              setMessages(chat.messages)     // load chat messages
+              setActiveChatIndex(index)      
+              setMessages(chat.messages)     
             }}
               className='my-2 cursor-pointer hover:text-green-400'
             >
