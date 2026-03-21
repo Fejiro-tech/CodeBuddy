@@ -97,13 +97,13 @@ const Chat = () => {
 
       {/* Mobile sidebar */}
       {isMobileSidebarOpen && (
-        <>
+        <div className='h-screen'>
           <div 
             className='bg-black/50 fixed inset-0 lg:hidden z-30'
             onClick={() => setIsMobileSidebarOpen(false)}
           />
 
-          <div className='w-64 h-screen top-0 left-0 fixed lg:hidden z-40'>
+          <div className='w-64 top-0 left-0 fixed lg:hidden z-40'>
             <SideBar 
               chats={chats}
               setChats={setChats}
@@ -116,7 +116,7 @@ const Chat = () => {
               setIsMobileSidebarOpen={setIsMobileSidebarOpen}
             />
           </div>
-        </>
+        </div>
       )}
     </div>
   )
