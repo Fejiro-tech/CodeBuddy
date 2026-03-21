@@ -81,7 +81,7 @@ const ChatContainer = ({
 
   return (
     <div className=' flex flex-col items-center justify-center pt-20 px-6 md:px-10 min-h-screen '> 
-      <div className='max-w-240 w-full flex-1 '> 
+      <div className='max-w-240 w-full flex-1 mt-4'> 
 
         {messages?.length === 0 ? (
           <div className='px-2'>

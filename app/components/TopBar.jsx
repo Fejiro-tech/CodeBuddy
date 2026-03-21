@@ -12,7 +12,7 @@ const TopBar = ({isMobileSidebarOpen, setIsMobileSidebarOpen}) => {
         <p className='text-[20px] md:text-[22px] lg:text-[24px] font-extrabold'>CodeBuddy</p>
       </Link>
 
-      <div className='gap-2 items-center hidden lg:flex'>
+      <div className='gap-2 items-center hidden lg:flex pr-3'>
       
         <span className='w-2 h-2 bg-[#7fdb5d] rounded-full'></span>
         <span className='w-2 h-2 bg-[#7fdb5d] rounded-full'></span>

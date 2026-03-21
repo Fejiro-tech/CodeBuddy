@@ -13,7 +13,7 @@ const SuggestedCard = ({ onSelect }) => {
             <div 
               key={idx}
               onClick={() => onSelect(question)}
-              className='w-44 md:w-64 text-sm lg:text-base bg-white/5 hover:bg-white/10 border border-white/10 px-4 lg:px-10 py-6 md:py-8 lg:py-10 rounded-2xl cursor-pointer '
+              className='w-46 md:w-64 text-sm lg:text-base bg-white/5 hover:bg-white/10 border border-white/10 px-4 lg:px-10 py-6 md:py-8 lg:py-10 rounded-2xl cursor-pointer '
               >
                 {question}
             </div>
