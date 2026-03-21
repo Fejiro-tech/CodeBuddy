@@ -1,5 +1,7 @@
 import React from 'react';
 import { MessageSquarePlus } from "lucide-react";
+import Link from 'next/link';
+import { FaCode, } from "react-icons/fa";
 
 const SideBar = ({
   messages,
@@ -28,13 +30,18 @@ const SideBar = ({
 
   return (
     <div className='bg-[#1e1e1e] border-r border-white/15 text-white h-screen flex flex-col py-10 px-6'>
+
+      <Link href="/" className=' mb-3 flex items-center gap-3'>
+        <FaCode size={22}/>
+        <span className='font-bold '>Home</span>
+      </Link>
       
       <button
         onClick={startNewChat}
         className="w-fit mb-10 flex items-center gap-3"
       >
         <MessageSquarePlus size={22} />
-        <span className='font-bold'>New chat</span>
+        <span className='font-bold '>New chat</span>
       </button>
 
       <div className="flex-1 overflow-y-auto">

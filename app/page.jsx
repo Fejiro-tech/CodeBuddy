@@ -111,10 +111,8 @@ export default function LandingPage() {
               transition={{ type: "spring", stiffness: 200 }}
               className="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl py-12 px-6 text-center w-80 md:w-100 lg:w-auto relative overflow-hidden"
             >
-              {/* Glow effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-[#55d627]/20 via-transparent to-[#55d627]/20 blur-xl"></div>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-linear-to-r from-[#55d627]/20 via-transparent to-[#55d627]/20 blur-xl"></div>
 
-              {/* Icon */}
               <motion.div
                 className="text-3xl text-[#55d627] mb-4 flex justify-center relative z-10"
                 whileHover={{ rotate: 10, scale: 1.2 }}
@@ -122,7 +120,6 @@ export default function LandingPage() {
                 {item.icon}
               </motion.div>
 
-              {/* Text */}
               <h3 className="text-xl font-semibold mb-4 text-[#55d627] relative z-10">
                 {item.title}
               </h3>
