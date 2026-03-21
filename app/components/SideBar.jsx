@@ -32,7 +32,7 @@ const SideBar = ({
     <div className='bg-[#1e1e1e] border-r border-white/15 text-white h-screen flex flex-col py-10 px-6'>
 
       <Link href="/" className=' mb-3 flex items-center gap-3'>
-        <FaCode size={22}/>
+        <FaCode size={22} className='text-[#55d627]'/>
         <span className='font-bold '>Home</span>
       </Link>
       
@@ -40,7 +40,7 @@ const SideBar = ({
         onClick={startNewChat}
         className="w-fit mb-10 flex items-center gap-3"
       >
-        <MessageSquarePlus size={22} />
+        <MessageSquarePlus size={22}  className='text-[#55d627]'/>
         <span className='font-bold '>New chat</span>
       </button>
 
